@@ -1,0 +1,27 @@
+# vscode
+.vscode
+
+# Intellij
+*.iml
+.idea
+
+# npm
+node_modules
+
+# Don't include the compiled main.js file in the repo.
+main.js
+
+# Exclude sourcemaps
+*.map
+
+# Plugin settings
+data.json
+
+# Exclude macOS Finder (System Explorer) View States
+.DS_Store
+
+# Exclude the direnv cache
+.direnv
+
+# In case you ever run nix build
+result

@@ -1,0 +1,15 @@
+{
+    "id": "page-properties",
+    "name": "Page Properties",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Render page properties similar to Logseq",
+    "author": "Anton Bulakh <self@necauqua.dev>",
+    "authorUrl": "https://necauqua.dev",
+    "fundingUrl": {
+        "Patreon": "https://www.patreon.com/necauqua",
+        "Ko-Fi": "https://ko-fi.com/necauqua",
+        "Buy Me a Coffee": "https://buymeacoffee.com/necauqua"
+    },
+    "isDesktopOnly": false
+}

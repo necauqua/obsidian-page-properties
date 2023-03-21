@@ -1,0 +1,88 @@
+
+body {
+    --page-prop-color: var(--tag-color);
+    --page-prop-background: var(--tag-background);
+    --page-prop-border-width: var(--tag-border-width);
+    --page-prop-border-color: var(--tag-border-color);
+    --page-prop-size: var(--tag-size);
+    --page-prop-padding-x: var(--tag-padding-x);
+    --page-prop-padding-y: var(--tag-padding-y);
+    --page-prop-radius: var(--tag-radius);
+
+    --page-prop-hidden-color: hsl(254deg 80% 68% / 50%);
+}
+
+/* basically a copy of .tag */
+.page-prop {
+    color: var(--page-prop-color);
+    background-color: var(--page-prop-background);
+    border: var(--page-prop-border-width) solid var(--page-prop-border-color);
+    font-size: var(--page-prop-size);
+    vertical-align: baseline;
+    border-left: none;
+    border-right: none;
+    padding-top: var(--page-prop-padding-y);
+    padding-bottom: var(--page-prop-padding-y);
+}
+
+/* instead of just .page-prop.page-prop-field and .page-prop.page-prop-content below */
+/* we have to have a ton of weird matchers because obsidian cm6 decorations always */
+/* have the highest (or lowest? anyway, it's wrong compared to mine and can't be changed) */
+/* precedence for some reason */
+
+:is(div,.markdown-rendered span) > .page-prop.page-prop-field:first-of-type,
+:is(div,.markdown-rendered span) > *:first-of-type > .page-prop.page-prop-field:first-of-type,
+:is(div,.markdown-rendered span) > *:empty + :is(.cm-hmd-internal-link,.cm-strong,.cm-em,.cm-highlight,.cm-strikethrough,.cm-comment,.cm-inline-code) > .page-prop.page-prop-field:first-of-type {
+    border-top-left-radius: var(--page-prop-radius);
+    border-bottom-left-radius: var(--page-prop-radius);
+    border-right: none;
+    border-left: var(--page-prop-border-width) solid var(--page-prop-border-color);
+    padding-left: var(--page-prop-padding-x);
+}
+
+:is(div,.markdown-rendered span) > .page-prop.page-prop-content:last-of-type,
+:is(div,.markdown-rendered span) > *:last-of-type > .page-prop.page-prop-content:last-of-type,
+:is(div,.markdown-rendered span) > :is(.cm-hmd-internal-link,.cm-strong,.cm-em,.cm-highlight,.cm-strikethrough,.cm-comment,.cm-inline-code):has(+ *:empty) > .page-prop.page-prop-content:last-of-type {
+    border-top-right-radius: var(--page-prop-radius);
+    border-bottom-right-radius: var(--page-prop-radius);
+    border-left: none;
+    border-right: var(--page-prop-border-width) solid var(--page-prop-border-color);
+    padding-right: var(--page-prop-padding-x);
+}
+
+/* bleaker color for the hidden props */
+.page-prop.page-prop-hidden {
+    color: var(--page-prop-hidden-color);
+}
+
+/* make the field-links only underlined on hover */
+.page-prop.page-prop-field.internal-link {
+    text-decoration-line: none;
+}
+.page-prop.page-prop-field.internal-link:hover {
+    text-decoration-line: var(--link-decoration);
+}
+
+/* dont highlight field links as unresolved */
+.markdown-rendered .page-prop.page-prop-field.internal-link.is-unresolved {
+    color: var(--page-prop-color);
+    opacity: inherit;
+    filter: inherit;
+    text-decoration-style: inherit;
+    text-decoration-color: inherit;
+}
+
+/* disable the little icon, it's misplaced interacts weirdly with round */
+/* corners (but the class is needed for it to be clickable in the editor) */
+/* second match is for the reader mode */
+.page-prop.page-prop-content.external-link,
+.page-prop.page-prop-content > a.external-link {
+    background-image: none;
+    padding-right: 0;
+}
+
+/* fixup if *someone* uses an inline code block as a field name */
+.cm-s-obsidian span.cm-inline-code:has(.page-prop) {
+    font-size: inherit;
+    background-color: inherit;
+}
