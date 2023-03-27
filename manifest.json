@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "minAppVersion": "0.15.0",
     "description": "Render page properties similar to Logseq",
-    "author": "Anton Bulakh <self@necauqua.dev>",
+    "author": "Anton Bulakh",
     "authorUrl": "https://necauqua.dev",
     "fundingUrl": {
         "Patreon": "https://www.patreon.com/necauqua",
