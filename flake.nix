@@ -14,9 +14,10 @@
           packageLockJson = ./package-lock.json;
           npmDepsHash = "sha256-bMzD0478ysBjLB97CRdM9cBHonHTVrlONR+X3h47p4c=";
           installPhase = ''
+            runHook preInstall
             mkdir -p $out/share/obsidian/plugins/page-properties
-            npm run build
-            cp main.js styles.css manifest.json $out/share/obsidian/plugins/page-properties
+            mv main.js styles.css manifest.json $out/share/obsidian/plugins/page-properties
+            runHook postInstall
           '';
         };
       }
