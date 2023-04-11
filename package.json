@@ -1,6 +1,6 @@
 {
     "name": "obsidian-page-properties",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "This plugin adds page properties similar to Logseq",
     "main": "main.js",
     "scripts": {
