@@ -16,7 +16,7 @@ Another couple of features, that are *missing* in Logseq are:
 - Some fields can be hidden from the reader view - also configurable.
 
 ## Installation
-- Currently awaiting approval on the [Obsidian Plugin Marketplace](https://obsidian.md/plugins?id=page-properties), so use one of the methods below.
+- It's on the [Obsidian Plugin Marketplace](https://obsidian.md/plugins?id=page-properties).
 - You can use the [Brat](https://github.com/TfTHacker/obsidian42-brat) plugin.
 - You can download the `main.js`, `styles.css` and `manifest.json` files manually from the [releases](https://github.com/necauqua/obsidian-page-properties/releases) page and put them into the `$VAULT/.obsidian/plugins/page-properties` folder.
 - For Nix users, you can do this too:
