@@ -56,8 +56,8 @@ class Settings extends PluginSettingTab {
         containerEl.createEl('h2', { text: 'General' })
 
         new Setting(containerEl)
-            .setName('Page prop names are inner links')
-            .setDesc('A feature from Logseq, you can disable that here if you want.')
+            .setName('Page property names are inner links')
+            .setDesc('A feature from Logseq, if you hover/click the page property name it\'ll behave as if it was a link to the page with the same name.')
             .addToggle(toggle => toggle
                 .setValue(this.plugin.settings.fieldsAreInnerLinks)
                 .onChange(async value => {
