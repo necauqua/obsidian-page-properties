@@ -12,7 +12,7 @@
           src = ./.;
           packageJson = ./package.json;
           packageLockJson = ./package-lock.json;
-          npmDepsHash = "sha256-bMzD0478ysBjLB97CRdM9cBHonHTVrlONR+X3h47p4c=";
+          npmDepsHash = "sha256-NCFDrIkGLsrA4mdAznnXeIKpQASkFOXG7qIxk8YomxM=";
           installPhase = ''
             runHook preInstall
             mkdir -p $out/share/obsidian/plugins/page-properties
