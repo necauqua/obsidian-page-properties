@@ -13,7 +13,8 @@ body {
 }
 
 /* basically a copy of .tag */
-.page-prop {
+/* the :not part is again because of the ordering issue (read below) */
+:not(.cm-hmd-codeblock) > .page-prop {
     color: var(--page-prop-color);
     background-color: var(--page-prop-background);
     border: var(--page-prop-border-width) solid var(--page-prop-border-color);
